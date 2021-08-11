@@ -16,5 +16,10 @@ namespace KalkulatorWFA
         {
             InitializeComponent();
         }
+
+        private void Kalkulator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
