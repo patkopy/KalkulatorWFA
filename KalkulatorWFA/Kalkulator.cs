@@ -91,35 +91,70 @@ namespace KalkulatorWFA
 
         private void buttonDziel_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDouble(textBoxWynik.Text);
+            try
+            {
+                a = Convert.ToDouble(textBoxWynik.Text);
+            }
+            catch
+            {
+                textBoxWynik.Clear();
+            }
             operacja = "/";
             textBoxWynik.Clear();
         }
 
         private void buttonMnoz_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDouble(textBoxWynik.Text);
+            try
+            {
+                a = Convert.ToDouble(textBoxWynik.Text);
+            }
+            catch
+            {
+                textBoxWynik.Clear();
+            }
             operacja = "*";
             textBoxWynik.Clear();
         }
 
         private void buttonOdejmij_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDouble(textBoxWynik.Text);
+            try
+            {
+                a = Convert.ToDouble(textBoxWynik.Text);
+            }
+            catch
+            {
+                textBoxWynik.Clear();
+            }
             operacja = "-";
             textBoxWynik.Clear();
         }
 
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
-            a = Convert.ToDouble(textBoxWynik.Text);
+            try
+            {
+                a = Convert.ToDouble(textBoxWynik.Text);
+            }
+            catch
+            {
+                textBoxWynik.Clear();
+            }
             operacja = "+";
             textBoxWynik.Clear();
         }
 
         private void buttonRowna_Click(object sender, EventArgs e)
         {
-            Dzialania();
+            try
+            {
+                Dzialania();
+            }
+            catch
+            {
+                textBoxWynik.Clear();
+            }
         }
 
         private void Dzialania()
@@ -140,7 +175,14 @@ namespace KalkulatorWFA
             }
             if (operacja == "/")
             {
-                wynik = a / b;
+                if(b != 0)
+                {
+                    wynik = a / b;
+                }
+                else
+                {
+                    textBoxWynik.Clear();
+                }
                 textBoxWynik.Text = Convert.ToString(wynik);
                 a = wynik;
             }
